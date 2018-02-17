@@ -1,0 +1,30 @@
+{% extends "base.html" %}
+{% block title %}
+  {{ object.shortcode }} | {{ block.super }}
+{% endblock title %}
+
+{% block styles %}
+    <style >
+    body{
+      background: url({{ bg_image }}) no-repeat center;
+      background-size: cover;
+      }
+
+      .inner p {
+        color:#000000c9;
+      }
+  </style>
+{% endblock styles %}
+
+{% block content %}
+  <div >
+    <h1>Exists Already</h1>
+
+    <p>{{ object.url }}</p>
+    {% if object.clickevent %}
+        <p>Count: {{ object.clickevent.count }}</p>
+    {% endif %}
+    <p> <a class="btn btn-link"  href="{{ object.get_short_url }}"> {{ object.get_short_url }} </a></p>
+    <a class="btn btn-default" href="/">+ New</a>
+  </div>
+{% endblock content %}

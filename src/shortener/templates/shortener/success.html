@@ -1,0 +1,24 @@
+{% extends "base.html" %}
+
+{% block styles %}
+    <style >
+    body{
+      background: url({{ bg_image }}) no-repeat center;
+      background-size: cover;
+      }
+
+      .inner p {
+        color:#000000c9;
+      }
+  </style>
+{% endblock styles %}
+
+{% block content %}
+  <div>
+    <h1>Success!</h1>
+
+    <p>{{ object.url }}</p>
+
+    <p> <a class="btn btn-link" href="{{ object.get_short_url }}"> {{ object.get_short_url }} </a></p>
+  </div>
+{% endblock content %}

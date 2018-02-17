@@ -1,0 +1,39 @@
+{% extends "base.html" %}
+
+{% block title %}Shorten that url{% endblock title %}
+
+{% block styles %}
+    <style >
+    body{
+      background: url({{ bg_image }}) no-repeat center;
+      background-size: cover;
+      }
+      .btn-link{
+      color:#50dfec;
+      text-shadow: None;
+      }
+      .btn-link:hover{
+      color:#000;
+      }
+      .cover-heading{
+        color: #ec3838;
+      }
+      .inner p {
+        color:#000000c9;
+      }
+  </style>
+{% endblock styles %}
+
+{% block content %}
+  <h1 class="cover-heading">{{ title }}</h1>
+  <p class="lead">
+    <div class="col-sm-6 col-sm-offset-3">
+      <form class="" action="." method="post">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <input class="btn btn-primary" type="submit" name="" value="Shortener &raquo;" placeholder="url">
+      </form>
+    </div>
+  </p>
+
+{% endblock content %}
